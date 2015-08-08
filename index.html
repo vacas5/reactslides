@@ -6,13 +6,14 @@
 
 		<title>The Dreaded Interview Questions</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="description" content="A look at a view tricky JS interview questions">
 		<meta name="author" content="Russell Anderson">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="icon" href="http://moontoast-marketing.s3.amazonaws.com/favicon.ico">
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
@@ -29,6 +30,29 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
+		<style>
+		/*	custom stuff	*/
+		div.custom_column {
+			float: left;
+			width: 50%;
+			padding: 0 3%;
+			box-sizing: border-box;
+		}
+
+		.custom_left_column img {
+			display: block;
+			max-width: 100%;
+			box-sizing: border-box;
+		}
+
+		.reveal img.custom_transparent {
+			background: none;
+			border: 0;
+			box-shadow: none;
+		}
+
+		</style>
+
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
@@ -44,20 +68,97 @@
 					<h1>Why I'm not a JavaScript developer</h1>
 					<h3>The dreaded interview questions...</h3>
 					<p>
-						<small>Created by <a href="http://hakim.se">Russell Anderson</a> / <a href="http://twitter.com/hakimel">@RealRealRuss</a></small>
+						<small>Created by <a href="http://russelljanderson.com">Russ Anderson</a> / <a href="http://twitter.com/RealRealRuss">@RealRealRuss</a></small>
 					</p>
+					<aside class="notes">
+						Don't linger here just get started.
+					</aside>
 				</section>
+
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-						<h2>Brad Frost</h2>
-						<p><img src="http://bradfrost.com/wp-content/themes/v7/images/brad_frost.jpg"></p>
-						<p><a href="//gist.github.com/bradfrost/59096a855281c433adc1" target="_blank">"Why I'm not a JavaScript developer."</a></p>
+						<div class="custom_column"><img src="images/familyhike.jpg"></div>
+						<div class="custom_column">
+							<h2>Me</h2>
+							<ul>
+								<li>husband, father of ~2</li>
+								<li>Christian, member of Midtown East</li>
+								<li>Inglewood</li>
+								<li>terrible golfer</li>
+								<li><a href="http://twitter.com/RealRealRuss" target="_blank">@RealRealRuss</a></li>
+							</ul>
+						</div>
 					</section>
 					<section>
-						<h2>HTML5 Boilerplate</h2>
+						<p><img class="custom_transparent" src="images/lockup-horizontal-white.png"></p>
+						<h3>Advocacy Marketing platform</h3>
+						<aside class="notes">
+							if you're a brand and customers love you, this is the place, what do you do for them?
+						</aside>
+					</section>
+					<section>
+						<h2>Front-end Developer</h2>
+						<ul>
+							<li class="fragment">I actually AM a JavaScript Developer</li>
+							<li class="fragment">full time ~4 years</li>
+							<li class="fragment">mostly self-taught / colleague-taught</li>
+							<li class="fragment">no computer science background</li>
+							<li class="fragment">mostly working within libraries and frameworks</li>
+						</ul>
+						<aside class="notes">
+							Intentionally misleading! can mention jquery and backbone, but don't get ahead of yourself here talking about limited JS knowledge, wait for HTML5 boilerplate
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<div class="custom_column">
+							<img src="http://bradfrost.com/wp-content/themes/v7/images/brad_frost.jpg">
+						</div>
+						<div class="custom_column">
+							<h2>Brad Frost</h2>
+							<p><a href="//gist.github.com/bradfrost/59096a855281c433adc1" target="_blank">"Why I'm not a JavaScript developer."</a></p>
+						</div>
+					</section>
+					<section>
+						<h2><img class="custom_transparent" src="images/html5boilerplate.jpg"></h2>
 						<h3>Front-end Job Interview Questions</h3>
-						<p><a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions#js-questions">https://github.com/h5bp/Front-end-Developer-Interview-Questions#js-questions</a></p>
+						<p><a target="_blank" href="https://github.com/h5bp/Front-end-Developer-Interview-Questions#js-questions">https://github.com/h5bp/Front-end-Developer-Interview-Questions#js-questions</a></p>
+					</section>
+					<section>
+						<h4>Why is it called a Ternary expression, what does the word "Ternary" indicate?</h4>
+						<p>&nbsp;</p>
+						<p class="fragment"><i>Ternary means it involves three things, and strings 'em all on one line so it's harder to read.</i></p>
+					</section>
+					<section>
+						<h4>Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5</h4>
+						<p>&nbsp;</p>
+						<p class="fragment"><i>That sounds hard, and for some strange reason I'm suddenly jonesing for a Dr. Pepper.</i></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Several basic JS questions that<br> I couldn't simply answer</h2>
+						<p class="fragment">I'm probably not alone</p>
+						<ul class="fragment">
+							<li>succinct explanation</li>
+							<li>real world application</li>
+							<li>additional resources</li>
+						</ul>
+						<aside class="notes">
+							Reference again my use of frameworks libraries, etc. Goal is to provide some basic succinct explanation, some real world application, additional resources for more learning.
+						</aside>
+					</section>
+					<section>
+						<h2>Aren't interview questions stupid?</h2>
+						<blockquote class="fragment">We are not paid to use every feature of the language. We are paid to write programs that work well<br> and are free of error</blockquote>
+						<p class="fragment">Douglas Crockford</p>
+						<aside class="notes">
+							well, yes. Fizzbuzz brings up a lot of emotions for developers. This isn't about aceing an interview but rather filling in some gaps!
+						</aside>
 					</section>
 				</section>
 
