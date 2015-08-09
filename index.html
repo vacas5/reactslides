@@ -136,6 +136,7 @@
 						<h4>Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5</h4>
 						<p>&nbsp;</p>
 						<p class="fragment"><i>That sounds hard, and for some strange reason I'm suddenly jonesing for a Dr. Pepper.</i></p>
+						<aside class="notes"></aside>
 					</section>
 				</section>
 
@@ -164,53 +165,199 @@
 
 				<section>
 					<section>
-						<h2>Event stuff</h2>
-						<ul>
-							<li>explain event delegation</li>
-							<li>describe event bubbling</li>
-						</ul>
+						<h2>1) Explain event delegation</h2>
+						<p class="fragment">JS events fire not only on a single DOM element but on all its descendants</p>
+						<aside class="notes">
+							Good example of one that I use all the time in practice but could not have just explained from memory. show definition, reverse of this is that they bubble up.
+						</aside>
 					</section>
 					<section>
-						<h2>Event delegation</h2>
+						<h2>2) Describe event bubbling.</h2>
+						<p>Also known as propogation, events on an element will "bubble up" and also fire on all parents</p>
+						<aside class="notes"></aside>
 					</section>
 					<section>
-						<h2>Event bubbling</h2>
-					</section>
+						<h3>Example: live editing a form</h3>
+						<pre><code data-trim>
+<form id="form">
 
+  <div class="input-group">
+    <label class="control-label" for="Name">Name <i class="icon-asterisk"></i></label>
+    <input type="text" id="Name" name="Name" placeholder="John Doe, e.g." required pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+" title="firstname lastname">
+  </div>
+
+  <div class="input-group">
+    <label class="control-label" for="Email">Email Address <i class="icon-asterisk"></i></label>
+    <input type="email" id="Email" name="Email" placeholder="example@yourdomain.com" required>
+  </div>
+
+  <div class="input-group">
+    <label class="control-label" for="Tel">Phone Number</label>
+    <input type="tel" id="Tel" name="Tel" placeholder="(555) 555-5555" pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}">
+  </div>
+
+  <div class="input-group">
+    <label class="control-label" for="Message">How would you like to get involved?</label>
+    <textarea id="Message" name="Message" rows="4"></textarea>
+  </div>
+
+  <div class="input-group">
+    <label class="checkbox">
+      <input name="News" type="checkbox"> Add me to your email newsletter
+    </label>
+  </div>
+
+  <div class="input-group">
+    <button type="submit" name="submit" class="btn">Submit</button>
+  </div>
+
+</form>
+
+<script>
+
+  function handleChange(event) {
+    // track your change
+    console.log(event.currentTarget);
+  }
+
+  var formEls = document.getElementsByTagName('input');
+
+  for (var i = 0; i < formEls.length ; i++) {
+    formEls[i].addEventListener('change', handleChange, false);
+  }
+
+  // easier with jQuery, but...
+  $('input').change(handleChange);
+
+</script>
+						</code></pre>
+					</section>
+					<section>
+						<h3>Example: live editing a form</h3>
+						<pre><code data-trim>
+<script>
+
+  function handleChange(event) {
+    // track your change
+    // this time on e.target
+    console.log(event.target);
+  }
+
+  $('#form').change(handleChange);
+
+</script>
+						</code></pre>
+					</section>
+					<section>
+						<h3>Example: binding to dynamic content</h3>
+						<p>Propogation still occurs even though it's added later</p>
+						<pre><code data-trim>
+<script>
+
+  // I do this all the time!
+  $('body').on('click', '#modalExit', function(e) {
+	// exit the modal
+  });
+
+  // even better
+  $('#modal').on('click', '#modalExit', function(e) {
+  });
+
+</script>
+						</code></pre>
+						<aside class="notes">
+							from jquery docs: Attaching many delegated event handlers near the top of the document tree can degrade performance
+						</aside>
+					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>IIFE</h2>
-						<p>Explain why the following doesn't work as an IIFE:</p>
+						<h2>3) Explain why the following doesn't work as an IIFE:</h2>
+						<p>&nbsp;</p>
 						<pre><code data-trim>
-function foo(){ }();
+function foo(){
+  // i pity this code
+}();
 						</code></pre>
+						<p class="fragment"><br>Immediately invoked function expression</p>
+						<blockquote class="fragment">Firefox - SyntaxError: expected expression, got ')' </blockquote>
 					</section>
+					<section>
+						<p>Functions as expressions vs. definitions</p>
+						<pre><code data-trim>
+function foo(){
+  // i am known as
+  // a definition or statement
+}
 
+var foo = function() {
+  // i am an expression
+  // i resolve to a value, even if just "undefined"
+};
+						</code></pre>
+						<blockquote>MDN - An expression is any valid unit of code that resolves to a value.</blockquote>
+						<aside class="notes">
+							functions can either be written as simple definitions, or as expressions. difference here is that JS expects a value from the latter. writing it the first way would behave similarly to how JS would see an if statement.
+						</aside>
+					</section>
 					<section>
 
-						<p>What needs to be changed to properly make it an IIFE?</p>
+						<h3>3a) What needs to be changed to properly make it an IIFE?</h3>
+						<p>&nbsp;</p>
 						<pre><code data-trim>
 (function foo(){ })();
 						</code></pre>
 					</section>
-				</section>
-
-				<section>
 					<section>
-						<h2>Global scope</h2>
-						<p>Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?</p>
+						<h3>Why would I ever use one?</h3>
+						<p class="fragment">Control variable scope<br> Josh Mock - <a href="http://tech.myemma.com/iifes-javascript-control-variable-scope/" target="_blank">http://tech.myemma.com/iifes-javascript-control-variable-scope/</a></p>
+						<pre class="fragment"><code data-trim>
+(function foo(){ })();
+
+console.log(foo);
+						</code></pre>
+						<blockquote class="fragment">Firefox - ReferenceError: foo is not defined</blockquote>
 					</section>
-
 				</section>
 
 				<section>
-
 					<section>
-						<h2>Values</h2>
-						<p>What's the difference between a variable that is: null, undefined or undeclared?</p>
-						<p>How would you go about checking for any of these states?</p>
+						<h2>4) Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?</h2>
+					</section>
+					<section>
+						<div class="custom_column">
+							<img src="images/hoverboards.jpg">
+						</div>
+						<div class="custom_column">
+							<h3>You can't predict the future</h3>
+							<p>&nbsp;</p>
+							<ul class="fragment">
+								<li>Reduce conflicts</li>
+								<li>Maintain independence</li>
+								<li>Easier to write your own code</li>
+							</ul>
+						</div>
+						<aside class="notes">Don't have to worry as much about namespacing variable names, etc.</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>5) What's the difference between a variable that is: null, undefined or undeclared?</h2>
+					</section>
+					<section>
+						<div class="custom_column">
+							<iframe src="//giphy.com/embed/pQR7qTuo3ALpC" width="480" height="360" frameBorder="0" style="max-width: 100%" class="giphy-embed" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						</div>
+						<div class="custom_column">
+							<h3>Undeclared</h3>
+							<blockquote class="fragment">Firefox - ReferenceError: foo is not defined</blockquote>
+							<p class="fragment">you forgot something</p>
+						</div>
+					</section>
+					<section>
+						<h2>5a) How would you go about checking for any of these states?</h2>
 					</section>
 				</section>
 
