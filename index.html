@@ -282,6 +282,7 @@ function foo(){
 						</code></pre>
 						<p class="fragment"><br>Immediately invoked function expression</p>
 						<blockquote class="fragment">Firefox - SyntaxError: expected expression, got ')' </blockquote>
+						<aside class="notes">literally had no idea what IIFE meant</aside>
 					</section>
 					<section>
 						<p>Functions as expressions vs. definitions</p>
@@ -345,6 +346,7 @@ console.log(foo);
 				<section>
 					<section>
 						<h2>5) What's the difference between a variable that is: null, undefined or undeclared?</h2>
+						<aside class="notes">This one I knew, but maybe couldn't verbalize.</aside>
 					</section>
 					<section>
 						<div class="custom_column">
@@ -352,22 +354,130 @@ console.log(foo);
 						</div>
 						<div class="custom_column">
 							<h3>Undeclared</h3>
+							<pre><code data-trim>
+foo = 5;
+							</code></pre>
 							<blockquote class="fragment">Firefox - ReferenceError: foo is not defined</blockquote>
 							<p class="fragment">you forgot something</p>
 						</div>
+						<aside class="notes">Reference the earlier error when we tried to console the function name of the IIFE.</aside>
 					</section>
 					<section>
-						<h2>5a) How would you go about checking for any of these states?</h2>
+						<h3>undefined</h3>
+						<p class="fragment">undefined is not a function.</p>
+						<pre class="fragment"><code data-trim>
+var foo;
+var bar = {};
+var baz = ['jonny', 'phil', 'ed'];
+var qux = function() {
+  // don't return anything
+};
+
+console.log(foo, bar.name, baz[4], qux());
+// all print undefined
+						</code></pre>
+						<ul class="fragment">
+							<li>variable exists but no defined value</li>
+							<li>object exists but without that key</li>
+							<li>array exists but nothing at index</li>
+							<li>function exists but doesn't return anything</li>
+							<li>falsy</li>
+						</ul>
+						<aside class="notes">before researching I could tell you with full certainty that undefined is not a function.</aside>
+					</section>
+					<section>
+						<h3>null</h3>
+						<pre><code data-trim>
+var foo = null;
+
+console.log(foo);
+// prints null
+						</code></pre>
+						<ul class="fragment">
+							<li>null has a value. Its value is null.</li>
+							<li>null is a "nothing" value</li>
+							<li>falsy</li>
+						</ul>
+						<aside class="notes">Use case here might be working with data from a server. Let’s say you set a var to equal the value of a specific key returned by a JSON object. If it comes back as undefined, that means it didn’t exists on the object. If it returns null, then it exists but has no value assigned to it.</aside>
 					</section>
 				</section>
 
+				<section>
+					<section>
+						<h2>5a) How would you go about checking for any of these states?</h2>
+						<p class="fragment">Undeclared finds you. <em>Except</em> if you're writing in the global scope!</p>
+						<pre class="fragment"><code data-trim>
+// global scope
+foo = 5;
+
+console.log(foo);
+// prints 5!
+// implied global, aka a reason people hate JS
+						</code></pre>
+					</section>
+					<section>
+						<h3>check for undefined</h3>
+						<pre><code data-trim>
+var foo;
+
+console.log(typeof foo); // "undefined" as a string
+console.log(typeof bar): // undeclared, but also returns "undefined" AARGH
+
+// preferred
+console.log(foo === undefined); // true boolean
+
+var baz = 'undefined';
+console.log(baz === undefined); // false. Hooray! maybe?
+						</code></pre>
+						<aside class="notes">typeof ignores undeclared variables</aside>
+					</section>
+					<section>
+						<h3>check for null</h3>
+						<pre><code data-trim>
+var foo = null;
+
+console.log(typeof foo); // object    let that sink in for a minute
+
+// preferred
+console.log(foo === null); // true boolean
+						</code></pre>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>6) What is the difference between == and === ?</h2>
+						<aside class="notes">Might as well. the very first thing you learn but it bears repeating</aside>
+					</section>
+					<section>
+						<h3>check out this badness</h3>
+						<pre><code data-trim>
+var foo;
+var bar = null;
+
+// preferred
+console.log(foo == bar); // true boolean
+						</code></pre>
+						<p class="fragment"><iframe src="//giphy.com/embed/5aLrlDiJPMPFS" width="480" height="558" frameBorder="0" style="max-width: 100%" class="giphy-embed" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></p>
+						<aside class="notes">remember these guys?</aside>
+					</section>
+					<section>
+						<p>Double equals checks for equality</p>
+						<p>&nbsp;</p>
+						<p>Triple equals checks for equality <em>and</em> type</p>
+						<p>&nbsp;</p>
+						<p class="fragment">Wield accordingly.</p>
+						<aside class="notes">double actually converts both to the same type before comparing. Feel free to use double equals, but when appropriate. JSHint may bark at you.</aside>
+					</section>
+				</section>
 
 				<section>
 					<h2>Hoisting</h2>
 					<p>Explain "hoisting".</p>
 				</section>
 
-				<section>
+				<!--<section>
 					<section>
 						<h2>What's the difference between host objects and native objects?</h2>
 					</section>
@@ -380,7 +490,7 @@ console.log(foo);
 						<li>What is the difference between call stack and task queue?</li>
 						<li>Explain the difference between synchronous and asynchronous functions.</li>
 					</ul>
-				</section>
+				</section>-->
 
 			</div>
 
