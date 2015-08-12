@@ -83,7 +83,7 @@
 							<h2>Me</h2>
 							<ul>
 								<li>husband, father of ~2</li>
-								<li>Christian, member of Midtown East</li>
+								<li>Christian, member of Midtown Fellowship</li>
 								<li>Inglewood</li>
 								<li>terrible golfer</li>
 								<li><a href="http://twitter.com/RealRealRuss" target="_blank">@RealRealRuss</a></li>
@@ -92,9 +92,10 @@
 					</section>
 					<section>
 						<p><img class="custom_transparent" src="images/lockup-horizontal-white.png"></p>
-						<h3>Advocacy Marketing platform</h3>
+						<p>Advocacy Marketing platform</p>
+						<p><img class="custom_transparent" src="https://moontoast-marketing.s3.amazonaws.com/home/AdvocatePlatforms.png"></p>
 						<aside class="notes">
-							if you're a brand and customers love you, this is the place, what do you do for them?
+							provide ways for fans of your brand to help spread the word about what you're doing
 						</aside>
 					</section>
 					<section>
@@ -107,7 +108,8 @@
 							<li class="fragment">mostly working within libraries and frameworks</li>
 						</ul>
 						<aside class="notes">
-							Intentionally misleading! can mention jquery and backbone, but don't get ahead of yourself here talking about limited JS knowledge, wait for HTML5 boilerplate
+							Bait and switch! can mention jquery and backbone, but don't get ahead of yourself here talking about limited JS knowledge, wait for HTML5 boilerplate<br><br>
+							Where's the title come from?
 						</aside>
 					</section>
 				</section>
@@ -121,22 +123,25 @@
 							<h2>Brad Frost</h2>
 							<p><a href="//gist.github.com/bradfrost/59096a855281c433adc1" target="_blank">"Why I'm not a JavaScript developer."</a></p>
 						</div>
+						<aside class="notes">describe without clicking the link, he wrote this post in january, his answers to... (next slide)</aside>
 					</section>
 					<section>
 						<h2><img class="custom_transparent" src="images/html5boilerplate.jpg"></h2>
 						<h3>Front-end Job Interview Questions</h3>
 						<p><a target="_blank" href="https://github.com/h5bp/Front-end-Developer-Interview-Questions#js-questions">https://github.com/h5bp/Front-end-Developer-Interview-Questions#js-questions</a></p>
+						<aside class="notes">this list of interview questions compiled by the folks behind h5bp. for instance (next slide)</aside>
 					</section>
 					<section>
 						<h4>Why is it called a Ternary expression, what does the word "Ternary" indicate?</h4>
 						<p>&nbsp;</p>
 						<p class="fragment"><i>Ternary means it involves three things, and strings 'em all on one line so it's harder to read.</i></p>
+						<aside class="notes">here's a question on that list</aside>
 					</section>
 					<section>
 						<h4>Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5</h4>
 						<p>&nbsp;</p>
 						<p class="fragment"><i>That sounds hard, and for some strange reason I'm suddenly jonesing for a Dr. Pepper.</i></p>
-						<aside class="notes"></aside>
+						<aside class="notes">the infamous fizz buzz</aside>
 					</section>
 				</section>
 
@@ -145,20 +150,21 @@
 						<h2>Several basic JS questions that<br> I couldn't simply answer</h2>
 						<p class="fragment">I'm probably not alone</p>
 						<ul class="fragment">
+							<li>I'll answer a few</li>
 							<li>succinct explanation</li>
 							<li>real world application</li>
-							<li>additional resources</li>
+							<!--<li>additional resources</li>-->
 						</ul>
 						<aside class="notes">
-							Reference again my use of frameworks libraries, etc. Goal is to provide some basic succinct explanation, some real world application, additional resources for more learning.
+							Reference again my use of frameworks libraries, etc. Goal is to provide some basic succinct explanation, some real world application. May be a bit rudimentary for some long time JS developers, but a good review nonetheless.
 						</aside>
 					</section>
 					<section>
 						<h2>Aren't interview questions stupid?</h2>
-						<blockquote class="fragment">We are not paid to use every feature of the language. We are paid to write programs that work well<br> and are free of error</blockquote>
-						<p class="fragment">Douglas Crockford</p>
+						<p>&nbsp;</p>
+						<blockquote class="fragment">We are not paid to use every feature of the language. We are paid to write programs that work well<br> and are free of error<br> &mdash; Douglas Crockford</blockquote>
 						<aside class="notes">
-							well, yes. Fizzbuzz brings up a lot of emotions for developers. This isn't about aceing an interview but rather filling in some gaps!
+							well, yes. Fizzbuzz brings up a lot of emotions for developers. show quote. What's more important is what you can build, how focused you can be, and that you want to learn.<br> But try not to get hung up on the interview part. let's just learn!
 						</aside>
 					</section>
 				</section>
@@ -168,12 +174,13 @@
 						<h2>1) Explain event delegation</h2>
 						<p class="fragment">JS events fire not only on a single DOM element but on all its descendants</p>
 						<aside class="notes">
-							Good example of one that I use all the time in practice but could not have just explained from memory. show definition, reverse of this is that they bubble up.
+							Good example of one that I use all the time in practice but could not have just explained from memory. show definition, reverse of this is that they bubble up.<br>
+							If you're clicking on an 'a' tag inside an 'li', inside a 'u l', aren't you in reality clicking on all three?
 						</aside>
 					</section>
 					<section>
 						<h2>2) Describe event bubbling.</h2>
-						<p>Also known as propogation, events on an element will "bubble up" and also fire on all parents</p>
+						<p>Inverse of this. Also known as propogation, events on an element will "bubble up" and also fire on all parents</p>
 						<aside class="notes"></aside>
 					</section>
 					<section>
@@ -231,6 +238,9 @@
 
 </script>
 						</code></pre>
+						<aside class="notes">
+							Here's a form with a lot of different inputs. Could try and target all the elements individually.
+						</aside>
 					</section>
 					<section>
 						<h3>Example: live editing a form</h3>
@@ -247,6 +257,7 @@
 
 </script>
 						</code></pre>
+						<aside class="notes">so much easier to target the form alone</aside>
 					</section>
 					<section>
 						<h3>Example: binding to dynamic content</h3>
@@ -266,7 +277,9 @@
 </script>
 						</code></pre>
 						<aside class="notes">
-							from jquery docs: Attaching many delegated event handlers near the top of the document tree can degrade performance
+							Super bonus, dynamic content. Let's say you have a super annoying modal that your client asked you to put in<br>
+							from jquery docs: Attaching many delegated event handlers near the top of the document tree can degrade performance<br>
+							No good translation, just say let's move on
 						</aside>
 					</section>
 				</section>
@@ -282,10 +295,10 @@ function foo(){
 						</code></pre>
 						<p class="fragment"><br>Immediately invoked function expression</p>
 						<blockquote class="fragment">Firefox - SyntaxError: expected expression, got ')' </blockquote>
-						<aside class="notes">literally had no idea what IIFE meant</aside>
+						<aside class="notes">literally had no idea what IIFE meant; it runs itself; what is wrong with this code?</aside>
 					</section>
 					<section>
-						<p>Functions as expressions vs. definitions</p>
+						<h3>Functions as expressions vs. definitions</h3>
 						<pre><code data-trim>
 function foo(){
   // i am known as
@@ -299,26 +312,60 @@ var foo = function() {
 						</code></pre>
 						<blockquote>MDN - An expression is any valid unit of code that resolves to a value.</blockquote>
 						<aside class="notes">
-							functions can either be written as simple definitions, or as expressions. difference here is that JS expects a value from the latter. writing it the first way would behave similarly to how JS would see an if statement.
+							functions can either be written as simple definitions, or as expressions. difference here is that JS expects a value from the latter.
 						</aside>
 					</section>
 					<section>
+						<h3>Functions as expressions vs. definitions</h3>
+						<pre><code data-trim>
+// this thing here
+function foo(){
 
+}();
+
+// is as if you
+function foo(){
+
+}
+
+();
+// wrote it on separate lines
+						</code></pre>
+						<aside class="notes">
+							writing it the first way would behave similarly to how JS would see an if statement.
+						</aside>
+					</section>
+					<section>
 						<h3>3a) What needs to be changed to properly make it an IIFE?</h3>
 						<p>&nbsp;</p>
-						<pre><code data-trim>
+						<pre class="fragment"><code data-trim>
 (function foo(){ })();
 						</code></pre>
+						<p>&nbsp;</p>
+						<p class="fragment">behold the parentheses</p>
+						<aside class="notes">parens here essentially turn this into an expression</aside>
 					</section>
 					<section>
 						<h3>Why would I ever use one?</h3>
-						<p class="fragment">Control variable scope<br> Josh Mock - <a href="http://tech.myemma.com/iifes-javascript-control-variable-scope/" target="_blank">http://tech.myemma.com/iifes-javascript-control-variable-scope/</a></p>
-						<pre class="fragment"><code data-trim>
+						<p class="fragment">Control variable scope<br><br></p>
+						<div class="fragment custom_column">
+							<img style="display: block; max-width: 50%; margin: 0 auto;" src="https://pbs.twimg.com/profile_images/492428538415292416/z7ZdiTuR.jpeg">
+							<p>
+								<small>Josh Mock<br>
+									<a href="http://tech.myemma.com/iifes-javascript-control-variable-scope/" target="_blank">http://tech.myemma.com/iifes-javascript-control-variable-scope/</a>
+								</small>
+							</p>
+						</div>
+						<div class="fragment custom_column">
+							<pre><code data-trim>
 (function foo(){ })();
 
 console.log(foo);
-						</code></pre>
-						<blockquote class="fragment">Firefox - ReferenceError: foo is not defined</blockquote>
+							</code></pre>
+							<blockquote>Firefox - ReferenceError: foo is not defined</blockquote>
+						</div>
+
+						<aside class="notes">foo can't be called outside, leads to another great question</aside>
 					</section>
 				</section>
 
@@ -339,14 +386,95 @@ console.log(foo);
 								<li>Easier to write your own code</li>
 							</ul>
 						</div>
-						<aside class="notes">Don't have to worry as much about namespacing variable names, etc.</aside>
+						<aside class="notes">
+							We all thought hoverboards would be made by a toy manufacturer and readily available. Instead they're made by lexus. <br>
+							Don't have to worry as much about namespacing variable names, etc.<br>
+							with large scale apps likely use a tool to help manage this, but useful to think about on small scale websites
+						</aside>
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>5) What's the difference between a variable that is: null, undefined or undeclared?</h2>
-						<aside class="notes">This one I knew, but maybe couldn't verbalize.</aside>
+						<h2>5) Explain "hoisting".</h2>
+						<p>&nbsp;</p>
+						<p class="fragment">all variables are declared at the top of any given function scope whether you like it or not</p>
+						<aside class="notes">While we're on the subject of scope. Never heard this term in my life until a few weeks ago.</aside>
+					</section>
+					<section>
+						<h3>Example - how I write it</h3>
+						<p>&nbsp;</p>
+						<pre><code data-trim>
+&nbsp;1  function hoist(track) {
+ 2    if (track === 'Down With Disease') {
+ 3      var action = 'dance';
+ 4    }
+ 5    else {
+ 6      var action = 'skip':
+ 7    }
+ 8
+ 9    return action;
+10  }
+						</code></pre>
+						<p class="fragment">line 6 error: 'action' is already defined</p>
+					</section>
+					<section>
+						<h3>Example - what JS does to it</h3>
+						<p>&nbsp;</p>
+						<pre><code data-trim>
+&nbsp;1  function hoist(track) {
+ 2    var action;
+ 3    if (track === 'Down With Disease') {
+ 4      action = 'dance';
+ 5    }
+ 6    else {
+ 7      var action = 'skip':
+ 8    }
+ 9
+10    return action;
+11  }
+						</code></pre>
+						<p class="fragment">var declaration "hoisted" to top</p>
+					</section>
+					<section>
+						<h3>So, yeah, technically, this works</h3>
+						<p>&nbsp;</p>
+						<pre><code data-trim>
+&nbsp;1  function hoist(track) {
+ 2    if (track === 'Down With Disease') {
+ 3      action = 'dance';
+ 4    }
+ 5    else {
+ 6      action = 'skip':
+ 7    }
+ 8
+ 9    var action;
+10
+11    return action;
+12  }
+						</code></pre>
+						<p class="fragment">cue collective moan</p>
+					</section>
+					<section>
+						<h3>What do we do with this knowledge?</h3>
+						<div class="custom_column">
+							<img src="https://s-media-cache-ak0.pinimg.com/736x/98/ac/be/98acbe1857af155daedb02ba286cfea1.jpg">
+						</div>
+						<div class="custom_column">
+							<ul>
+								<li>Many recommend declaring all variables at the top of the function</li>
+								<li>Makes it clearer which vars are scoped</li>
+								<li>Does it make the rest harder to read?</li>
+							</ul>
+						</div>
+						<aside class="notes">ask if anyone has ever gotten bit by hoisting. How people declare variables. Harder to see what vars have a value?</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>6) What's the difference between a variable that is: null, undefined or undeclared?</h2>
+						<aside class="notes">Speaking of variables, this one I knew, but maybe couldn't quite verbalize.</aside>
 					</section>
 					<section>
 						<div class="custom_column">
@@ -360,11 +488,11 @@ foo = 5;
 							<blockquote class="fragment">Firefox - ReferenceError: foo is not defined</blockquote>
 							<p class="fragment">you forgot something</p>
 						</div>
-						<aside class="notes">Reference the earlier error when we tried to console the function name of the IIFE.</aside>
+						<aside class="notes">Besides being a short lived show on Fox, undeclared is simply that, you haven't declared it using var, and therefore it's as if it doesn't exist. Reference the earlier error when we tried to console the function name of the IIFE.</aside>
 					</section>
 					<section>
 						<h3>undefined</h3>
-						<p class="fragment">undefined is not a function.</p>
+						<p class="fragment">undefined is not a function. developer jokes you guys!</p>
 						<pre class="fragment"><code data-trim>
 var foo;
 var bar = {};
@@ -396,15 +524,16 @@ console.log(foo);
 						<ul class="fragment">
 							<li>null has a value. Its value is null.</li>
 							<li>null is a "nothing" value</li>
+							<li>not zero, not an empty string/object/array</li>
 							<li>falsy</li>
 						</ul>
-						<aside class="notes">Use case here might be working with data from a server. Let’s say you set a var to equal the value of a specific key returned by a JSON object. If it comes back as undefined, that means it didn’t exists on the object. If it returns null, then it exists but has no value assigned to it.</aside>
+						<aside class="notes">Use case here might be working with data from a server. Let's say you set a var to equal the value of a specific key returned by a JSON object. If it comes back as undefined, that means it didn't exist on the object. If it returns null, then it exists but has no value assigned to it.</aside>
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>5a) How would you go about checking for any of these states?</h2>
+						<h2>6a) How would you go about checking for any of these states?</h2>
 						<p class="fragment">Undeclared finds you. <em>Except</em> if you're writing in the global scope!</p>
 						<pre class="fragment"><code data-trim>
 // global scope
@@ -441,13 +570,13 @@ console.log(typeof foo); // object    let that sink in for a minute
 // preferred
 console.log(foo === null); // true boolean
 						</code></pre>
+						<aside class="notes">this is literally a bug in javascript</aside>
 					</section>
-
 				</section>
 
 				<section>
 					<section>
-						<h2>6) What is the difference between == and === ?</h2>
+						<h2>7) What is the difference between == and === ?</h2>
 						<aside class="notes">Might as well. the very first thing you learn but it bears repeating</aside>
 					</section>
 					<section>
@@ -472,100 +601,111 @@ console.log(foo == bar); // true boolean
 					</section>
 				</section>
 
+				<!--<section>
+					<section>
+						<h2>8) What's the difference between host objects and native objects?</h2>
+					</section>
+				</section>-->
 
 				<section>
 					<section>
-						<h2>7) Explain "hoisting".</h2>
-						<p>&nbsp;</p>
-						<p class="fragment">all variables are declared at the top of any given function scope</p>
-						<aside class="notes">one last thing about variables. Never heard this term in my life until a few weeks ago.</aside>
+						<h2>8) What is the event loop?</h2>
+						<h3>8a) What is the difference between call stack and task queue?</h3>
 					</section>
 					<section>
-						<h3>Example - how I write it</h3>
+						<h3>story time</h3>
 						<p>&nbsp;</p>
 						<pre><code data-trim>
-&nbsp;1  function hoist(track) {
- 2    if (track === 'Down With Disease') {
- 3      var action = 'dance';
- 4    }
- 5    else {
- 6      var action = 'skip':
- 7    }
- 8
- 9    return action;
-10  }
+var markup = Handlebars.compile(template)(model);
+
+this.$el.html(markup);
+
+this.$el.foundation('reflow');
 						</code></pre>
-						<p class="fragment">line 6 error: 'action' is already defined</p>
-					</section>
-					<section>
-						<h3>Example - what JS does to it</h3>
 						<p>&nbsp;</p>
-						<pre><code data-trim>
-&nbsp;1  function hoist(track) {
- 2    var action;
- 3    if (track === 'Down With Disease') {
- 4      action = 'dance';
- 5    }
- 6    else {
- 7      action = 'skip':
- 8    }
- 9
-10    return action;
-11  }
-						</code></pre>
-						<p class="fragment">var declaration "hoisted" to top</p>
+						<p class="fragment">this would never work</p>
+						<aside class="notes">best explained with this story. use foundation's form validation. have to reflow if you're adding to the dom. this would never work however</aside>
 					</section>
 					<section>
-						<h3>So, yeah, technically, this works</h3>
-						<p>&nbsp;</p>
+						<h3>story time</h3>
 						<pre><code data-trim>
-&nbsp;1  function hoist(track) {
- 2    if (track === 'Down With Disease') {
- 3      action = 'dance';
- 4    }
- 5    else {
- 6      action = 'skip':
- 7    }
- 8
- 9    var action;
-10
-11    return action;
-12  }
+var markup = Handlebars.compile(template)(model);
+
+this.$el.html(markup);
+
+var self = this;
+
+setTimeout(function() {
+
+  self.$el.foundation('reflow');
+
+}, 0);
 						</code></pre>
-						<p class="fragment">cue collective moan</p>
+						<blockquote class="fragment">Defers invoking the function until the current call stack has cleared</blockquote>
+						<p class="fragment">(whatever that means)</p>
+						<aside class="notes">best explained with this story. use foundation's form validation. have to reflow if you're adding to the dom. this would never work however</aside>
 					</section>
 					<section>
-						<h3>What do we do with this knowledge?</h3>
-						<ul>
-							<li>Many recommend declaring all variables at the top of the function</li>
-							<li>Makes it clearer which vars are scoped</li>
-							<li>Does it make the rest harder to read?</li>
-						</ul>
-						<aside class="notes">ask if anyone has ever gotten bit by hoisting. How people declare variables. Harder to see what vars have a value?</aside>
+						<h3>explained<br><br></h3>
+						<div class="custom_column">
+							<img src="https://mdn.mozillademos.org/files/4617/default.svg">
+						</div>
+						<div class="custom_column">
+							<ul>
+								<li>Single-threaded</li>
+								<li>Call Stack</li>
+								<li>Task Queue</li>
+								<li>Event Loop</li>
+							</ul>
+						</div>
+						<aside class="notes">
+							borrowed this image from MDN. JS is what is known as a “single threaded” which basically means one thing at a time. As your JS is run, it handles one function at a time in the order in which they are called. It creates a LIFO stack of these called the call stack. While it is processing these things in order, the browser is effectively blocked (repaints, etc).
+The task queue is another queue used by the browser to keep track of things that need to be executed. It is separate from the call stack. These are handled in the order in which they come in. Event loop waits on the stack to clear and then adds from the queue.
+						</aside>
+					</section>
+					<section>
+						<h3>why this works</h3>
+						<pre><code data-trim>
+var markup = Handlebars.compile(template)(model);
+
+this.$el.html(markup);
+
+var self = this;
+
+setTimeout(function() {
+
+  self.$el.foundation('reflow');
+
+}, 0);
+						</code></pre>
+						<p>setTimeout takes function from stack and puts in queue</p>
+						<aside class="notes">setTimeout is part of the Web API, provided by your browser</aside>
+					</section>
+					<section>
+						<p><a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ" target="_blank">Philip Roberts: What the heck is the event loop anyway?</a></p>
 					</section>
 				</section>
 
 				<section>
 					<h2>You're hired!</h2>
-					<iframe src="//giphy.com/embed/sbnHm4yZKFmpy" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-					<p class="fragment">just keep building</p>
-					<aside class="notes">this is the end. so many more on this list! reemphasize that it's not all about knowing every in and out of a language but building awesome things!</aside>
-				</section>
-				<!--<section>
-					<section>
-						<h2>What's the difference between host objects and native objects?</h2>
-					</section>
+					<p class="fragment"><iframe src="//giphy.com/embed/sbnHm4yZKFmpy" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></p>
+					<aside class="notes">just so topical</aside>
 				</section>
 
 				<section>
-					<h2>Event Loop</h2>
-					<ul>
-						<li>What is the event loop?</li>
-						<li>What is the difference between call stack and task queue?</li>
-						<li>Explain the difference between synchronous and asynchronous functions.</li>
-					</ul>
-				</section>-->
-
+					<h2>Loads more</h2>
+					<div class="custom_column">
+						<img src="images/jsquestions.jpg">
+					</div>
+					<div class="custom_column">
+						<img src="images/jsquestions2.jpg">
+					</div>
+					<aside class="notes">many of which would require an hour on there own</aside>
+				</section>
+				<section>
+					<h2>Just keep building</h2>
+					<aside class="notes">that list can look pretty intimidating. reemphasize that it's not all about knowing every in and out of a language but building awesome things!</aside>
+				</section>
 			</div>
 
 		</div>
