@@ -377,7 +377,7 @@ console.log(foo, bar.name, baz[4], qux());
 // all print undefined
 						</code></pre>
 						<ul class="fragment">
-							<li>variable exists but no defined value</li>
+							<li>variable exists but no defined value (not initialized)</li>
 							<li>object exists but without that key</li>
 							<li>array exists but nothing at index</li>
 							<li>function exists but doesn't return anything</li>
@@ -453,10 +453,10 @@ console.log(foo === null); // true boolean
 					<section>
 						<h3>check out this badness</h3>
 						<pre><code data-trim>
-var foo;
-var bar = null;
+var foo; // undefined
+var bar = null; // null
 
-// preferred
+// compare the two
 console.log(foo == bar); // true boolean
 						</code></pre>
 						<p class="fragment"><iframe src="//giphy.com/embed/5aLrlDiJPMPFS" width="480" height="558" frameBorder="0" style="max-width: 100%" class="giphy-embed" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></p>
@@ -472,11 +472,85 @@ console.log(foo == bar); // true boolean
 					</section>
 				</section>
 
+
 				<section>
-					<h2>Hoisting</h2>
-					<p>Explain "hoisting".</p>
+					<section>
+						<h2>7) Explain "hoisting".</h2>
+						<p>&nbsp;</p>
+						<p class="fragment">all variables are declared at the top of any given function scope</p>
+						<aside class="notes">one last thing about variables. Never heard this term in my life until a few weeks ago.</aside>
+					</section>
+					<section>
+						<h3>Example - how I write it</h3>
+						<p>&nbsp;</p>
+						<pre><code data-trim>
+&nbsp;1  function hoist(track) {
+ 2    if (track === 'Down With Disease') {
+ 3      var action = 'dance';
+ 4    }
+ 5    else {
+ 6      var action = 'skip':
+ 7    }
+ 8
+ 9    return action;
+10  }
+						</code></pre>
+						<p class="fragment">line 6 error: 'action' is already defined</p>
+					</section>
+					<section>
+						<h3>Example - what JS does to it</h3>
+						<p>&nbsp;</p>
+						<pre><code data-trim>
+&nbsp;1  function hoist(track) {
+ 2    var action;
+ 3    if (track === 'Down With Disease') {
+ 4      action = 'dance';
+ 5    }
+ 6    else {
+ 7      action = 'skip':
+ 8    }
+ 9
+10    return action;
+11  }
+						</code></pre>
+						<p class="fragment">var declaration "hoisted" to top</p>
+					</section>
+					<section>
+						<h3>So, yeah, technically, this works</h3>
+						<p>&nbsp;</p>
+						<pre><code data-trim>
+&nbsp;1  function hoist(track) {
+ 2    if (track === 'Down With Disease') {
+ 3      action = 'dance';
+ 4    }
+ 5    else {
+ 6      action = 'skip':
+ 7    }
+ 8
+ 9    var action;
+10
+11    return action;
+12  }
+						</code></pre>
+						<p class="fragment">cue collective moan</p>
+					</section>
+					<section>
+						<h3>What do we do with this knowledge?</h3>
+						<ul>
+							<li>Many recommend declaring all variables at the top of the function</li>
+							<li>Makes it clearer which vars are scoped</li>
+							<li>Does it make the rest harder to read?</li>
+						</ul>
+						<aside class="notes">ask if anyone has ever gotten bit by hoisting. How people declare variables. Harder to see what vars have a value?</aside>
+					</section>
 				</section>
 
+				<section>
+					<h2>You're hired!</h2>
+					<iframe src="//giphy.com/embed/sbnHm4yZKFmpy" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+					<p class="fragment">just keep building</p>
+					<aside class="notes">this is the end. so many more on this list! reemphasize that it's not all about knowing every in and out of a language but building awesome things!</aside>
+				</section>
 				<!--<section>
 					<section>
 						<h2>What's the difference between host objects and native objects?</h2>
