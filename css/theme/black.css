@@ -11,18 +11,18 @@ section.has-light-background, section.has-light-background h1, section.has-light
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #313D47;
-  background-color: #313D47; }
+  background: #5A829E;
+  background-color: #5A829E; }
 
 .reveal {
-  font-family: "Avenir Next", Helvetica, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 38px;
   font-weight: normal;
   color: #fff; }
 
 ::selection {
   color: #fff;
-  background: #dcf1f9;
+  background: #fafdfe;
   text-shadow: none; }
 
 .reveal .slides > section,
@@ -41,7 +41,7 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #fff;
-  font-family: "Avenir Next", Helvetica, sans-serif;
+  font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: normal;
@@ -198,20 +198,20 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #6EC4E8;
+  color: #89C5F0;
   text-decoration: none;
-  -webkit-transition: color 0.15s ease;
-  -moz-transition: color 0.15s ease;
-  transition: color 0.15s ease; }
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #84cdeb;
+  color: #a0d0f3;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #2ca9de; }
+  background: #45a4e7; }
 
 /*********************************************
  * IMAGES
@@ -223,13 +223,13 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
 
 .reveal a img {
-  -webkit-transition: all 0.15s linear;
-  -moz-transition: all 0.15s linear;
-  transition: all 0.15s linear; }
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  transition: all .15s linear; }
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #6EC4E8;
+  border-color: #89C5F0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -237,31 +237,31 @@ body {
  *********************************************/
 .reveal .controls div.navigate-left,
 .reveal .controls div.navigate-left.enabled {
-  border-right-color: #6EC4E8; }
+  border-right-color: #89C5F0; }
 
 .reveal .controls div.navigate-right,
 .reveal .controls div.navigate-right.enabled {
-  border-left-color: #6EC4E8; }
+  border-left-color: #89C5F0; }
 
 .reveal .controls div.navigate-up,
 .reveal .controls div.navigate-up.enabled {
-  border-bottom-color: #6EC4E8; }
+  border-bottom-color: #89C5F0; }
 
 .reveal .controls div.navigate-down,
 .reveal .controls div.navigate-down.enabled {
-  border-top-color: #6EC4E8; }
+  border-top-color: #89C5F0; }
 
 .reveal .controls div.navigate-left.enabled:hover {
-  border-right-color: #84cdeb; }
+  border-right-color: #a0d0f3; }
 
 .reveal .controls div.navigate-right.enabled:hover {
-  border-left-color: #84cdeb; }
+  border-left-color: #a0d0f3; }
 
 .reveal .controls div.navigate-up.enabled:hover {
-  border-bottom-color: #84cdeb; }
+  border-bottom-color: #a0d0f3; }
 
 .reveal .controls div.navigate-down.enabled:hover {
-  border-top-color: #84cdeb; }
+  border-top-color: #a0d0f3; }
 
 /*********************************************
  * PROGRESS BAR
@@ -270,7 +270,7 @@ body {
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
-  background: #6EC4E8;
+  background: #89C5F0;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
@@ -279,4 +279,4 @@ body {
  * SLIDE NUMBER
  *********************************************/
 .reveal .slide-number {
-  color: #6EC4E8; }
+  color: #89C5F0; }

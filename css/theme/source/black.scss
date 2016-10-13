@@ -16,19 +16,19 @@
 
 
 // Override theme settings (see ../template/settings.scss)
-$backgroundColor: #313D47;
+$backgroundColor: #5A829E;
 
 $mainColor: #fff;
 $headingColor: #fff;
 
 $mainFontSize: 38px;
-$mainFont: 'Avenir Next', Helvetica, sans-serif;
-$headingFont: 'Avenir Next', Helvetica, sans-serif;
+$mainFont: 'Open Sans', sans-serif;
+$headingFont: 'Open Sans', Helvetica, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: none;
 $headingFontWeight: 400;
-$linkColor: #6EC4E8;
+$linkColor: #89C5F0;
 $linkColorHover: lighten( $linkColor, 5% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 
