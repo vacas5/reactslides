@@ -69,7 +69,6 @@
         }
 
         div.bio_box {
-            margin-top: 80px;
             clear: both;
             float: right;
             width: 50%;
@@ -129,6 +128,10 @@
             margin-right: auto;
         }
 
+        .reveal .monospace {
+            font-family: monospace;
+        }
+
         </style>
 
         <!--[if lt IE 9]>
@@ -142,9 +145,12 @@
 
             <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
-                <section class="clearfix">
-                    <h1>"This code sucks."</h1>
-                    <h3>and other tales of developer hubris...</h3>
+                <section class="clearfix" data-background="images/unsplash-code.jpg">
+                    <h1 class="monospace">thisCodeSucks</h1>
+                    <div class="custom_column">&nbsp;</div>
+                    <div class="custom_column">
+                        <h3 style="text-align: right;">and other tales of developer hubris...</h3>
+                    </div>
                     <div class="bio_box">
                         <div class="custom_column">
                             <img src="https://secure.gravatar.com/avatar/ce51967b337807e35940d46d1cf03cdb?size=800" alt="me and a dinosaur">
@@ -161,8 +167,8 @@
 
                 <!-- Example of nested vertical slides -->
                 <section>
-                    <section data-background="images/redrocks.jpg" >
-                        <h2 >Let's set the stage.</h2>
+                    <section data-background="images/rosettastone.jpg" >
+                        <h2 >Some back story</h2>
                         <ul class="fragment">
                             <li >Front End Developer</li>
                             <li >full time ~5 years</li>
@@ -193,15 +199,8 @@
                             They all seem to take this strategy of "let's build the plane while flying". Meaning, we have to do things in a hurry, often with little to no idea what we actually want to accomplish product-wise. Things change constantly. And in these type of situations, under these conditions, you have a tendency to pile up Technical Debt.
                         </aside>
                     </section>
-                    <section>
-                        <div class="clearfix">
-                            <div class="custom_column">
-                                <p><img src="http://www.newyorker.com/wp-content/uploads/2016/08/Taylor-Payday-Loans1-1200.jpg"></p>
-                            </div>
-                            <div class="custom_column">
-                                <h2><br>Tech debt.</h2>
-                            </div>
-                        </div>
+                    <section data-background="http://cdn.americanbanker.com/media/newspics/payydaye2f.jpg">
+                        <h2><br><br><br><br><br>Technical Debt</h2>
                         <aside class="notes">
                             What I mean is... Over time, if things were patched, shortcuts were taken, or we implemented something in an inelegant way to get it out the door, we're going to have to go back and clean it up at some point. A metaphor coined by Ward Cunningham.
                         </aside>
@@ -225,7 +224,7 @@
                             <img src="https://pbs.twimg.com/profile_images/736590048733335552/tNyDrjqv.jpg">
                         </div>
                         <div class="custom_column sixty">
-                            <ul class="fragment">
+                            <ul>
                                 <li>More particular about how I do things</li>
                                 <li>Judgmental of others' code</li>
                                 <li>"Not invented here" fallacy</li>
@@ -233,7 +232,7 @@
                             </ul>
                         </div>
                         <aside class="notes">
-                            Moreso though, I've noticed that as I've gotten better I am prone to some bad habits as a result of my good habits. Mainly, I am becoming more set in my ways and obsessive about code looking and feeling a certain way. Which means that anytime I look at old code, whether it was from a developer before me, or my own from a while ago, I think
+                            Moreso though, I've noticed that as I've gotten better I am prone to some bad habits as a result of my good habits. Mainly, I am becoming more set in my ways and obsessive about code looking and feeling a certain way. I have brought my perfectionism into it. Which means that anytime I look at old code, whether it was from a developer before me, or my own from a while ago, I think
                         </aside>
                     </section>
                     <section>
@@ -242,20 +241,32 @@
                         <aside class="notes">it sucks! So what do I do with it?</aside>
                     </section>
                     <section>
-                        <h2>REFACTOR TIME</h2>
+                        <h2>REFACTORING</h2>
                         <p>I rewrite the whole damn thing.</p>
                         <iframe src="//giphy.com/embed/fQZX2aoRC1Tqw" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-                        <aside class="notes">When do I do this? Sometimes I get it scoped. More often than not I try and rush my tasks and squeeze it in when I can. and can you guess what happens?</aside>
+                        <aside class="notes">
+                            refactor is just a fancy word for rewrite.
+                            When do I do this? Sometimes I get it scoped. More often than not I try and rush my tasks and squeeze it in when I can. and can you guess what happens?
+                        </aside>
                     </section>
                     <section>
                         <h2>Regressions, of course</h2>
                         <iframe src="//giphy.com/embed/tdoUaMmgtgSqc" width="480" height="404" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
                         <p>When code that worked, doesn't anymore. Because of something I did. Probably.</p>
-                        <aside class="notes">it breaks. But not only that. A lot of times I stress or miss deadlines. And of course I have to fix it.</aside>
+                        <aside class="notes">If you're not familiar with regressions, it means it breaks. And of course, I have to fix it. But, regressions are the worst.</aside>
+                    </section>
+                    <section data-background="http://blog.confluence.com/wp-content/uploads/2014/09/black-hole.jpeg">
+                        <h2>Regressions are the worst</h2>
+                        <ul>
+                            <li>Unplanned for</li>
+                            <li>Difficult to spot</li>
+                            <li>Erode confidence in the whole team</li>
+                        </ul>
+                        <aside class="notes">Why are they the worst? Because they are completely unplanned for. You might expect there to be bugs on an implementation of a new feature, but you don't build in time to fix regressions. They can also be very difficult to spot, and may only appear under a very specific set of circumstances that are tough to test for. They can really erode confidence in a dev team. Something about a regression makes management wonder what the hell we're all doing. A lot of times I stress or miss deadlines.</aside>
                     </section>
                 </section>
 
-                <section data-background="http://cdn-media-2.lifehack.org/wp-content/files/2014/06/Public-Speaking.jpg">
+                <section data-background="images/redrocks.jpg">
                     <h2>Who is this talk for? <span class="fragment">Me.</span></h2>
                     <p>&nbsp;<br><br><br></p>
                     <h3 class="fragment">What do I need to tell myself?</h3>
@@ -265,212 +276,136 @@
                         <li class="fragment">How do I refactor the right way to avoid regressions?</li>
                     </ul>
                     <aside class="notes">
-                        Uh, me, mainly. But hopefully it can serve as a cautionary tale. I won't presume you are as unreasonable and conniving as I can be. But here is what I need to know.
+                        Uh, me, mainly. I kind of want to emphasize that this things I've learned trying to cowboy refactoring. But hopefully it can serve as a cautionary tale. I won't presume you are as unreasonable and conniving as I can be. But here is what I need to know.
                     </aside>
                 </section>
 
                 <section>
                     <section data-background="https://cdn0.vox-cdn.com/uploads/chorus_asset/file/6789335/mr-robot-s2-1.0.jpg">
-                        <h2 style="text-align: left;">Maxim 1)<br><br></h2>
-                        <p class="fragment"  style="text-align: left;">Just because I didn't write it, doesn't mean it sucks.</p>
+                        <h2 style="text-align: left;"><br><br>Just because I didn't write it, doesn't mean it sucks.</h2>
                         <aside class="notes">
+                            (Imagine these being said to you calmly by Eliot from Mr Robot)
                             Try and try hard to understand the code written by colleagues and former devs. There may be zero comments. It may have crazy inception like levels of cyclomatic complexity. But try. Try and try hard to work whatever I need to into the existing codebase, using existing functions. They may have made vastly different choices than you would have, but try.
                         </aside>
                     </section>
                     <section data-background="https://pmcvariety.files.wordpress.com/2015/06/mr-robot.jpg">
-                        <h2 style="text-align: right">Maxim 2)<br><br></h2>
-                        <p class="fragment" style="text-align: right;">That line of code is probably there for a reason.</p>
-                        <aside class="notes"></aside>
-                    </section>
-                    <section>
-                        <h3>Example: live editing a form</h3>
-                        <pre><code data-trim>
-<form id="form">
-
-  <div class="input-group">
-    <label class="control-label" for="Name">Name <i class="icon-asterisk"></i></label>
-    <input type="text" id="Name" name="Name" placeholder="John Doe, e.g." required pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+" title="firstname lastname">
-  </div>
-
-  <div class="input-group">
-    <label class="control-label" for="Email">Email Address <i class="icon-asterisk"></i></label>
-    <input type="email" id="Email" name="Email" placeholder="example@yourdomain.com" required>
-  </div>
-
-  <div class="input-group">
-    <label class="control-label" for="Tel">Phone Number</label>
-    <input type="tel" id="Tel" name="Tel" placeholder="(555) 555-5555" pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}">
-  </div>
-
-  <div class="input-group">
-    <label class="control-label" for="Message">How would you like to get involved?</label>
-    <textarea id="Message" name="Message" rows="4"></textarea>
-  </div>
-
-  <div class="input-group">
-    <label class="checkbox">
-      <input name="News" type="checkbox"> Add me to your email newsletter
-    </label>
-  </div>
-
-  <div class="input-group">
-    <button type="submit" name="submit" class="btn">Submit</button>
-  </div>
-
-</form>
-
-<script>
-
-  function handleChange(event) {
-    // track your change
-    console.log(event.currentTarget);
-  }
-
-  var formEls = document.getElementsByTagName('input');
-
-  for (var i = 0; i < formEls.length ; i++) {
-    formEls[i].addEventListener('change', handleChange, false);
-  }
-
-  // easier with jQuery, but...
-  $('input').change(handleChange);
-
-</script>
-                        </code></pre>
+                        <h2 style="text-align: right;"><br><br><br>That line of code is probably there for a reason.</h2>
                         <aside class="notes">
-                            Here's a form with a lot of different inputs. Could try and target all the elements individually.
+                            Here is a pretend dialogue. "I can't figure out what this line does. It doesn't seem to do anything. I don't even think we support that anymore. It was just left in there by mistake." Guess how that turns out? If you believe a line of code to be obsolete, proceed with extreme caution. Give that line of code the benefit of the doubt.
                         </aside>
                     </section>
-                    <section>
-                        <h3>Example: live editing a form</h3>
-                        <pre><code data-trim>
-<script>
-
-  function handleChange(event) {
-    // track your change
-    // this time on e.target
-    console.log(event.target);
-  }
-
-  $('#form').change(handleChange);
-
-</script>
-                        </code></pre>
-                        <aside class="notes">so much easier to target the form alone</aside>
-                    </section>
-                    <section>
-                        <h3>Example: binding to dynamic content</h3>
-                        <p>Propogation still occurs even though it's added later</p>
-                        <pre><code data-trim>
-<script>
-
-  // I do this all the time!
-  $('body').on('click', '#modalExit', function(e) {
-    // exit the modal
-  });
-
-  // even better
-  $('#modal').on('click', '#modalExit', function(e) {
-  });
-
-</script>
-                        </code></pre>
+                    <section data-background="http://www.usanetwork.com/sites/usanetwork/files/styles/2880x1620/public/2016/09/mrrobot_aspot_SP_212_2880x1620_1.jpg?itok=u8rmimno">
+                        <h2 style="text-align: left;"><br><br><br><br><br>There is a difference between technical debt and code that just irks me.</h2>
                         <aside class="notes">
-                            Super bonus, dynamic content. Let's say you have a super annoying modal that your client asked you to put in<br>
-                            from jquery docs: Attaching many delegated event handlers near the top of the document tree can degrade performance<br>
-                            No good translation, just say let's move on
+                            Yeah. This is kinda a biggie. Yes, there are things that I want to do. I've learned a lot and all those old patterns make my stomach queasy. But that doesn't make it technical debt. Tech debt is when you've made intentionally brittle/hacky choices in order to meet a deadline, and you know it can't scale and can't be allowed to stay like it is for long. Tech debt is a risk to your software and your team.
                         </aside>
+                    </section>
+                    <section data-background="https://s-media-cache-ak0.pinimg.com/originals/a9/96/09/a996098718deef8fbd399bff0b729c5b.jpg">
+                        <h2 style="text-align: left"><br><br><br>What does it matter if <br>my code is perfect <br>but my software sucks?</h2>
+                        <aside class="notes">And here it is. This is what we're ultimately here for. To build great software. We should not lose focus on the goal. And I sympathize if you feel like the code base is your only domain. But it's not. We all can stay focused on making great software. Because great software equals users equals us still having jobs. I know it's not that simple, but we all own the finished product. Let's make sure the choices we make about the time we spend are making it better.</aside>
                     </section>
                 </section>
 
                 <section>
-                    <section>
-                        <h2>3) Explain why the following doesn't work as an IIFE:</h2>
-                        <p>&nbsp;</p>
-                        <pre><code data-trim>
-function foo(){
-  // i pity this code
-}();
-                        </code></pre>
-                        <p class="fragment"><br>Immediately invoked function expression</p>
-                        <blockquote class="fragment">Firefox - SyntaxError: expected expression, got ')' </blockquote>
-                        <aside class="notes">literally had no idea what IIFE meant; it runs itself; what is wrong with this code?</aside>
+                    <section data-background="https://s-media-cache-ak0.pinimg.com/originals/d5/ef/73/d5ef739d89df792fba5df093394dc842.jpg">
+                        <h2><br>Game time.<br><br><br></h2>
+                        <h3 class="fragment">Should I refactor?</h3>
+                        <aside class="notes">Okay so now I am going to try and put those maxims to work on some real life scenarios.</aside>
                     </section>
                     <section>
-                        <h3>Functions as expressions vs. definitions</h3>
-                        <pre><code data-trim>
-function foo(){
-  // i am known as
-  // a definition or statement
+                        <h3 class="top_left">Scenario:</h3>
+                        <h4>Many of my dependencies are well out of date, some are unsupported altogether.</h4>
+                        <p><img src="images/npm-error.jpg" alt="npm error in a terminal"></p>
+                        <h2 class="fragment bottom_right">YES</h2>
+                        <aside class="notes">
+                            This is a really good but unfortunate example of technical debt. With most dependencies, you are choosing to rely on someone else's code in order to quickly achieve a goal. The pain of keeping them up to date is the payback. Relying on old or unsupported dependencies can really hamstring future development, so yes I think it's worth the effort to try and keep these up to date, or better yet, refactor out completely ones you don't need anymore.
+                        </aside>
+                    </section>
+                    <section>
+                        <h3>Scenario:</h3>
+                        <h4>Swapping switch statements in favor of Object literals.</h4>
+                        <div class="clearfix">
+                            <div class="custom_column">
+                                <pre><code data-trim>
+var odds;
+switch(team) {
+    case 'Titans':
+        odds = '100 to 1';
+        break;
+    case 'Patriots':
+        odds = '3 to 1';
+        break;
 }
-
-var foo = function() {
-  // i am an expression
-  // i resolve to a value, even if just "undefined"
+                                </code></pre>
+                            </div>
+                            <div class="custom_column">
+                                <pre><code data-trim>
+var oddsObject = {
+    'Titans': '100 to 1',
+    'Patriots': '3 to 1'
 };
-                        </code></pre>
-                        <blockquote>MDN - An expression is any valid unit of code that resolves to a value.</blockquote>
+
+var odds = oddsObject[team];
+                                </code></pre>
+                            </div>
+                        </div>
+                        <p>
+                            <img src="https://toddmotto.com/img/todd.jpg" alt="head shot of Todd Motto" style="border-radius: 50%; width: 100px; vertical-align: middle;" />&nbsp;
+                            <small style="vertical-align: middle;"><a href="https://toddmotto.com/deprecating-the-switch-statement-for-object-literals/">Todd Motto: "Replacing switch statements with Object literals"</a></small>
+                        </p>
+                        <h2 class="fragment bottom_right">NO</h2>
                         <aside class="notes">
-                            functions can either be written as simple definitions, or as expressions. difference here is that JS expects a value from the latter.
+                            There are a few reasons why you would might to do this. Todd Motto has a good article on it. But what would my answer be? No. This is a good example of adopting a new, arguably better pattern. However, the old pattern worked just fine, if less extensible. Dropping everything to change every switch in the code base would take up too much effort. Maybe I could refactor as I go along.
                         </aside>
                     </section>
                     <section>
-                        <h3>Functions as expressions vs. definitions</h3>
-                        <pre><code data-trim>
-// this thing here
-function foo(){
-
-}();
-
-// is as if you
-function foo(){
-
-}
-
-();
-// wrote it on separate lines
-                        </code></pre>
-                        <aside class="notes">
-                            writing it the first way would behave similarly to how JS would see an if statement.
-                        </aside>
+                        <h3>Scenario:</h3>
+                        <h4>The backend changes the name of a model</h4>
+                        <div class="clearfix">
+                            <div class="custom_column">
+                                <p><img src="http://i.onionstatic.com/avclub/5123/45/16x9/960.jpg" /></p>
+                            </div>
+                            <div class="custom_column">
+                                <pre><code data-trim>
+// leave the same
+var cocaCola = data.new_coke;
+// or change it
+var newCoke = data.new_coke
+                                </code></pre>
+                            </div>
+                        </div>
+                        <h2 class="fragment bottom_right">YES</h2>
+                        <aside class="notes">So, this can definitely happen from time to time. I love when we introduce breaking changes for each other. However, it doesn't have to cause a lot of work for us. We can continue to use the same terminology in the front end and just assign the new name to it. What should I do? I say refactor, although it is certainly not without real risk of regression. But by leaving it inconsistent when it comes to something like your data model, you are relying on tribal knowledge to remember what means what, unless you really want to explain the difference in documentation somewhere. Yes this has happened to me.</aside>
+                    </section>
+                    <section data-background="images/unsplash-desktop.jpg">
+                        <h3><br><br><br>Scenario:</h3>
+                        <h4>A view design changes dramatically</h4>
+                        <h2 class="fragment">MAYBE</h2>
+                        <aside class="notes">Finally! I say. This view's code is garbage. Since we're going to redesign the whole view anyway, I'm just going to scrap it and start all over. But wait! I get finished and I realize that the designer forgot about a whole bunch of functionality in the old view, and I've got to rewrite all of that too! I was not counting on that. We'll definitley be pushing this to next sprint. -- So, a lot of times this is the temptation but I would encourage you to seek first to redo the view without a complete rewrite. Your old view probably contains a lot of tribal knowledge in it that even product people and designers have forgotten. Be wary!</aside>
                     </section>
                     <section>
-                        <h3>3a) What needs to be changed to properly make it an IIFE?</h3>
-                        <p>&nbsp;</p>
-                        <pre class="fragment"><code data-trim>
-(function foo(){ })();
-                        </code></pre>
-                        <p>&nbsp;</p>
-                        <p class="fragment">behold the parentheses</p>
-                        <aside class="notes">parens here essentially turn this into an expression</aside>
-                    </section>
-                    <section>
-                        <h3>Why would I ever use one?</h3>
-                        <p class="fragment">Control variable scope<br><br></p>
-                        <div class="fragment custom_column">
-                            <img style="display: block; max-width: 50%; margin: 0 auto;" src="https://pbs.twimg.com/profile_images/492428538415292416/z7ZdiTuR.jpeg">
-                            <p>
-                                <small>Josh Mock<br>
-                                    <a href="http://tech.myemma.com/iifes-javascript-control-variable-scope/" target="_blank">http://tech.myemma.com/iifes-javascript-control-variable-scope/</a>
-                                </small>
-                            </p>
+                        <h3>Scenario:</h3>
+                        <div class="custom_column sixty">
+                            <h4><br>A function written by ex-employee is extremely complex and convoluted, but works without bugs</h4>
+                            <h2 class="fragment">NO</h2>
                         </div>
-                        <div class="fragment custom_column">
-                            <pre><code data-trim>
-(function foo(){ })();
-
-console.log(foo);
-                            </code></pre>
-                            <blockquote>Firefox - ReferenceError: foo is not defined</blockquote>
+                        <div class="custom_column forty">
+                            <p><img src="http://www.expertsmind.com/CMSImages/206_Determine%20the%20cyclomatic%20complexity.png"></p>
                         </div>
-
-                        <aside class="notes">foo can't be called outside, leads to another great question</aside>
+                        <aside class="notes">I say skip it until I absolutely have to deal with it. It may be too complex, inception level complex, but if it is not breaking I should put my focus elsewhere. There may be other nuances in the code base I'm unaware of that will come to light later. Perhaps this dev understood some things I don't currently. Give the benefit of the doubt and move on.</aside>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h2>4) Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?</h2>
+                        <h2>Refactor the right way</h2>
+                        <ul>
+                            <li>Unit Tests</li>
+                            <li>Documentation</li>
+                            <li>Superfluous comments</li>
+                            <li>Communication</li>
+                        </ul>
+                        <aside class="notes">So, I want to pause for just a second and make sure to clarify a few things.</aside>
                     </section>
                     <section>
                         <div class="custom_column">

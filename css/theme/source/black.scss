@@ -20,11 +20,13 @@ $backgroundColor: #5A829E;
 
 $mainColor: #fff;
 $headingColor: #fff;
+$borderColor: #f5f5f5;
 
 $mainFontSize: 38px;
 $mainFont: 'Open Sans', sans-serif;
 $headingFont: 'Open Sans', Helvetica, sans-serif;
-$headingTextShadow: none;
+$headingTextShadow: 2px 2px rgba(0,0,0,0.3);
+$heading1TextShadow: $headingTextShadow;
 $headingLetterSpacing: normal;
 $headingTextTransform: none;
 $headingFontWeight: 400;
