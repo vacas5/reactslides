@@ -181,9 +181,10 @@
                         <ul>
                             <li >Front End Developer</li>
                             <li >full time ~5 years</li>
-                            <li >mostly self-taught / colleague-taught</li>
+                            <li >self-taught / colleague-taught</li>
                             <li >no computer science background</li>
-                            <li >jQuery => Backbone => Angular 1.x => React</li>
+                            <li >mostly client side via API</li>
+                            <li >django, jinja</li>
                         </ul>
                         <aside class="notes">
                             Hey I'm Russ. I am going to give you a little back story because it definitely informs this talk. I'm a self-taught front end developer, and I've been doing it for a little over 5 years. I have worked on a number of different technology stacks, because in that relatively short period of time...
@@ -239,7 +240,7 @@
                     </section>
                     <section>
                         <h2>This code suuuuuuuuuuuuuuuuuuuuuucks.</h2>
-                        <iframe src="//giphy.com/embed/l2SpVpuOqiAR7H6H6" width="480" height="244" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                        <iframe src="//giphy.com/embed/3o7TKzUfqABuaYPo2Y" width="480" height="261" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
                         <aside class="notes">it sucks! So what do I do with it?</aside>
                     </section>
                     <section>
@@ -315,45 +316,33 @@
                         <aside class="notes">Okay so now I am going to try and put those maxims to work on some real life scenarios.</aside>
                     </section>
                     <section>
-                        <h3 class="top_left">Scenario:</h3>
-                        <h4>Many of my dependencies are well out of date, some are unsupported altogether.</h4>
-                        <p><img src="images/npm-error.jpg" alt="npm error in a terminal"></p>
-                        <h2 class="fragment bottom_right">YES</h2>
-                        <aside class="notes">
-                            This is a really good but unfortunate example of technical debt. With most dependencies, you are choosing to rely on someone else's code in order to quickly achieve a goal. The pain of keeping them up to date is the payback. Relying on old or unsupported dependencies can really hamstring future development, so yes I think it's worth the effort to try and keep these up to date, or better yet, refactor out completely ones you don't need anymore.
-                        </aside>
-                    </section>
-                    <section>
                         <h3>Scenario:</h3>
-                        <h4>Swapping switch statements in favor of Object literals.</h4>
+                        <h4>Swapping if / elif / else in favor of dictionary lookup.</h4>
                         <div class="clearfix">
-                            <div class="custom_column">
+                            <div class="">
                                 <pre><code data-trim>
-var odds;
-switch(team) {
-    case 'Titans':
-        odds = '100 to 1';
-        break;
-    case 'Patriots':
-        odds = '3 to 1';
-        break;
-}
+if team == 'Falcons':
+    odds = '100 to 1'
+elif team == 'Patriots':
+    odds = '3 to 1'
+elif team == 'Titans':
+    odds = 'maybe next year'
                                 </code></pre>
                             </div>
-                            <div class="custom_column">
+                            <div class="">
                                 <pre><code data-trim>
-var oddsObject = {
-    'Titans': '100 to 1',
-    'Patriots': '3 to 1'
-};
+super_bowl_odds = {
+    'Falcons': '100 to 1',
+    'Patriots': '3 to 1',
+    'Titans': 'maybe next year'
+}
 
-var odds = oddsObject[team];
+odds = super_bowl_odds.get(team, 'Unknown team')
                                 </code></pre>
                             </div>
                         </div>
                         <p class="article_link">
-                            <img src="https://toddmotto.com/img/todd.jpg" alt="head shot of Todd Motto" class="avatar" />&nbsp;
-                            <small><a href="https://toddmotto.com/deprecating-the-switch-statement-for-object-literals/">Todd Motto: "Replacing switch statements with Object literals"</a></small>
+                            <small><a href="http://stackoverflow.com/questions/11445226/better-optimization-technique-using-if-else-or-dictionary">Stack Overflow: "Better optimization technique using if/else or dictionary"</a></small>
                         </p>
                         <h2 class="fragment bottom_right">NO</h2>
                         <aside class="notes">
@@ -361,46 +350,66 @@ var odds = oddsObject[team];
                         </aside>
                     </section>
                     <section>
+                        <h3 class="top_left">Scenario:</h3>
+                        <h4>Many of my dependencies are well out of date, some are unsupported altogether.</h4>
+                        <p>
+                            <pre><code data-trim>
+# requirements.txt
+requests==0.2.0
+                            </code></pre>
+                        </p>
+                        <h2 class="fragment bottom_right">YES</h2>
+                        <aside class="notes">
+                            This is a really good but unfortunate example of technical debt. With most dependencies, you are choosing to rely on someone else's code in order to quickly achieve a goal. The pain of keeping them up to date is the payback. Relying on old or unsupported dependencies can really hamstring future development, so yes I think it's worth the effort to try and keep these up to date, or better yet, refactor out completely ones you don't need anymore.
+                        </aside>
+                    </section>
+                    <section>
                         <h3>Scenario:</h3>
                         <h4>I've created a generic utility function to replace code that's been copied and pasted in several places</h4>
                         <pre><code data-trim>
-function handleErrors(response) {
-    if (response.ok) {
-        return response.json();
-    } else {
-        var error = new Error(response.statusText);
-        error.response = response;
-        alert('What did you do?!??!?');
-        throw error;
-    }
-}
+def plus_one_week(dt):
+    """
+    Returns the given date plus 7 days.
+    """
+    return dt + timedelta(days=7)
+                        </code></pre>
+                        <pre><code data-trim>
+from ..utility.date import plus_one_week
 
-fetch("api/items")
-    .then(handleErrors)
-    .then(json => {
-        console.log(json);
-    }).catch(error => {
-        console.log(error);
-    });
+# ...further down the page
+
+        c = self.create(user_id=user.id,
+            type='invitation',
+            redirect_url=app.config['JOIN_LINK'],
+            expires_on=plus_one_week(datetime.now()))
                         </code></pre>
                         <h2 class="fragment">NO, but...</h2>
                         <aside class="notes">Carefully assess the risk. I would say no in favor of adding comments to places where the copy/pasted code is and saying it should be replaced with the utility function. These kind of refactors are really frequent, often not in the scope of a sprint, and difficult to measure how long it will really take. I say build the function and then work it in.</aside>
                     </section>
                     <section>
                         <h3>Scenario:</h3>
-                        <h4>The backend changes the name of a model</h4>
                         <div class="clearfix">
-                            <div class="custom_column">
+                            <div class="custom_column sixty">
+                                <h4 style="text-align: left">A column in the database changes name. Change template context?</h4>
+                            </div>
+                            <div class="custom_column forty">
                                 <p><img src="images/coke.jpg" /></p>
                             </div>
-                            <div class="custom_column">
-                                <pre><code data-trim>
-// leave the same
-var cocaCola = data.new_coke;
-// or change it
-var newCoke = data.new_coke
-                                </code></pre>
-                            </div>
+                        </div>
+
+
+                        <div class="">
+                            <pre><code data-trim>
+class BeveragesView(TemplateView):
+template_name = 'drinks.html'
+
+def get_context_data(self, **kwargs):
+    context = super(BeveragesView, self).get_context_data(**kwargs)
+
+    # leave the templates the same or change?
+    context['drinks'] = get_beverages(self.request)
+    return context
+                            </code></pre>
                         </div>
                         <h2 class="fragment bottom_right">YES</h2>
                         <aside class="notes">So, this can definitely happen from time to time. I love when we introduce breaking changes for each other. However, it doesn't have to cause a lot of work for us. We can continue to use the same terminology in the front end and just assign the new name to it. What should I do? I say refactor, although it is certainly not without real risk of regression. But by leaving it inconsistent when it comes to something like your data model, you are relying on tribal knowledge to remember what means what, unless you really want to explain the difference in documentation somewhere. Yes this has happened to me.</aside>
@@ -455,7 +464,7 @@ var newCoke = data.new_coke
                         <ul>
                             <li><a href="http://www.gnu.org/software/grep/manual/grep.html">grep</a> - find via command line</li>
                             <li><a href="https://www.gnu.org/software/sed/manual/sed.html">sed</a> - find and replace via command line and regex</li>
-                            <li><a href="https://github.com/facebook/jscodeshift">jscodeshift</a> &amp; <a href="https://github.com/cpojer/js-codemod">js-codemod</a> - updating patterns (e.g. ES6)</li>
+                            <li><a href="https://www.jetbrains.com/help/pycharm/2016.3/finding-and-replacing-text-in-project.html">PyCharm</a> or other IDEs</li>
                         </ul>
                         <aside class="notes">So originally when researching this I was going to dive into some of these tools, but now I don't think I can recommend using any of them other than grep to identify where you may need to refactor. I think using them kind of violates some of my principals.</aside>
                     </section>
